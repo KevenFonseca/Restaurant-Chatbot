@@ -1,0 +1,23 @@
+{
+  "name": "restaurant-chatbot",
+  "version": "1.0.0",
+  "description": "Restaurants need a simple way for customers to place orders without complex apps or human intervention.",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "tsx src/server.ts"
+  },
+  "keywords": [],
+  "author": "Keven Fonseca",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.0.6",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}
