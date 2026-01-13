@@ -4,7 +4,8 @@
   "description": "Restaurants need a simple way for customers to place orders without complex apps or human intervention.",
   "main": "dist/server.js",
   "scripts": {
-    "dev": "tsx src/server.ts"
+    "dev": "tsx src/server.ts",
+    "seed:menu": "tsx src/seed/seedMenu.ts"
   },
   "keywords": [],
   "author": "Keven Fonseca",
