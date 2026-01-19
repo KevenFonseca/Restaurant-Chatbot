@@ -1,0 +1,9 @@
+export enum ChatState {
+    START = 'START',
+    MENU = 'MENU',
+    ORDERING = 'ORDERING',
+    CHECKOUT = 'CHECKOUT',
+    PAYMENT = 'PAYMENT',
+    COMPLETED = 'COMPLETED',
+    CANCELLED = 'CANCELLED'
+}
