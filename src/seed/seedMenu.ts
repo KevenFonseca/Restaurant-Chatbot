@@ -2,12 +2,12 @@ import MenuItemModel from '../models/menuItemModel'
 import connectDB from '../dbconfig/db'
 
 const menu = [
-    { name: "burger", price: 5},
-    { name: "pizza", price: 8},
-    { name: "salad", price: 4},
-    { name: "fries", price: 3},
-    { name: "soda", price: 2},
-    { name: "coffee", price: 2}
+    { id: 1, name: "burger", price: 5},
+    { id: 2, name: "pizza", price: 8},
+    { id: 3, name: "salad", price: 4},
+    { id: 4, name: "fries", price: 3},
+    { id: 5, name: "soda", price: 2},
+    { id: 6, name: "coffee", price: 2}
 ]
 
 const seed = async () => {
