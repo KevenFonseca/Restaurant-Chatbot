@@ -2,7 +2,7 @@ import { ChatState } from './chatState'
 import handleStart from './handler/startHandler'
 import handleMenu from './handler/menuHandler'
 import handleOrdering from './handler/orderingHandler'
-import handleCheckout from './Handler/checkoutHandler'
+import handleCheckout from './handler/checkoutHandler'
 
 const stateRouter = async (state: String, payload: any) => {
     switch (state) {
