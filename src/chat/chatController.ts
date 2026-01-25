@@ -1,7 +1,6 @@
 import { Request, Response } from 'express'
 import getOrCreateSession from '../service/sessionService'
 import stateRouter from '../chat/stateRouter'
-import { ChatResponse } from '../types/chatTypes'
 
 const chatController = async (req: Request, res: Response) => {
     try {
