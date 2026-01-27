@@ -1,14 +1,16 @@
 import { ChatResponse } from '../../types/chatTypes'
 import Order from '../../models/orderModel'
 import { ChatState } from '../chatState'
+import handleStart from './startHandler'
 
 const handleCheckout = async ({ session }: {session: any}): Promise<ChatResponse> => {
     const lastOrder = await Order.findOne({ sessionId: session._id })
         .sort({ createdAt: -1 })
 
     if (!lastOrder) {
+        session.currentState = ChatState.START
         return {
-            reply: 'No order to place',
+            reply: 'No order to place, Returning to main menu',
             updatedSession: session
         }
     }
@@ -22,12 +24,15 @@ const handleCheckout = async ({ session }: {session: any}): Promise<ChatResponse
 
     lastOrder.status = 'confirmed'
     await lastOrder.save()
-    
-    session.currentState = ChatState.PAYMENT
 
+    session.temporaryOrder = []
+    session.currentState = ChatState.START
+    
+    const startResponse = await handleStart({ session })
+    
     return {
-        reply: `Order confirmed!\nTotal: ${lastOrder.totalPrice}.\nProceeding to payment.`,
-        updatedSession: session
+        reply: `Order confirmed!\nTotal: $${lastOrder.totalPrice}.\n` + startResponse.reply,
+        updatedSession: startResponse.updatedSession
     }
 }
 

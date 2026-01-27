@@ -12,9 +12,10 @@ const orderHistoryHandler = async ({ session }: {session: any}): Promise<ChatRes
         }
     }
 
-    const history = orders.map((order: any, index: number) => 
-        `${index + 1}. Status: ${order.status}, Total: ${order.totalPrice}`
-    )
+    const history = orders.map((order: any, index: number) => { 
+        const dateStr = order.createdAt.toLocaleString()
+        return `${index + 1}. Status: ${order.status}, Total: $${order.totalPrice.toFixed(2)}, Date: ${dateStr}`
+    })
 
     return {
         reply: `Your order history:\n${history.join('\n')}`,
