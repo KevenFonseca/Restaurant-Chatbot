@@ -1,12 +1,18 @@
 import express, { Request, Response } from 'express'
 import cookieParser from 'cookie-parser'
 import chatRouter from './chat/chatRouter'
+import path from 'path'
+import { fileURLToPath } from 'url'
 
 const app = express()
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 // Middleware
 app.use(express.json())
 app.use(cookieParser())
+app.use(express.static(path.join(__dirname, '..', 'public')))
 
 // Chat routes
 app.use('/chat', chatRouter)
