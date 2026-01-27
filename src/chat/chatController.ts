@@ -1,6 +1,7 @@
 import { Request, Response } from 'express'
 import getOrCreateSession from '../service/sessionService'
 import stateRouter from '../chat/stateRouter'
+import { ChatState } from './chatState'
 
 const chatController = async (req: Request, res: Response) => {
     try {
@@ -9,23 +10,26 @@ const chatController = async (req: Request, res: Response) => {
             return res.status(400).json({error: 'DeviceId missing'})
         }
 
-        const input = req.body?.message?.trim()
-        if (!input) {
-            return res.status(400).json({error: 'Message is required'})
-        }
-            
+        const input = req.body?.message?.trim() || ''
+
         const session = await getOrCreateSession(deviceId)
 
-        // const { reply, updatedSession } = await testFunction({session})
+        console.log(session.currentState)
+
+        if (!input && session.currentState !== ChatState.START) {
+            return res.status(400).json({error: 'Message is required'})
+        }
+
         const { reply, updatedSession } = await stateRouter(session.currentState, {input, session})
        
         // Save session updates
         await updatedSession.save()
 
+        console.log(session.currentState)
         // Send response
         res.json({
-            deviceId: updatedSession.deviceId,
-            currentState: updatedSession.currentState,
+            // deviceId: updatedSession.deviceId,
+            // currentState: updatedSession.currentState,
             replyMessage: reply
         })
 
