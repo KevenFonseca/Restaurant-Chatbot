@@ -1,6 +1,6 @@
 import { ChatState } from './chatState'
 import handleStart from './handler/startHandler'
-import handleMenu from './handler/menuHandler'
+import handleSelection from './handler/selectionHandler'
 import handleOrdering from './handler/orderingHandler'
 import handleCheckout from './handler/checkoutHandler'
 
@@ -12,7 +12,7 @@ const stateRouter = async (state: String, payload: any) => {
 
         case ChatState.MENU:
             // Handle MENU state
-            return handleMenu(payload)
+            return handleSelection(payload)
 
         case ChatState.ORDERING:
             // Handle ORDERING state
@@ -35,7 +35,10 @@ const stateRouter = async (state: String, payload: any) => {
             // return handleCancelled(payload)
         
         default:
-            throw new Error('Invalid chat state')
+            return {
+                reply: 'Invalid chat state',
+                updatedSession: payload.session
+            }
     }
 }
 
