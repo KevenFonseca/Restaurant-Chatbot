@@ -9,6 +9,7 @@
     "esModuleInterop": true,                      // habilitar import de módulos comunsjs
     "forceConsistentCasingInFileNames": true,     // garantir consistência de maiúsculas/minúsculas nos nomes de arquivos
     "skipLibCheck": true,                         // pular verificação de tipos em arquivos de declaração
+    "typeRoots": ["./node_modules/@types", "./src/types"]
   },
 
   "include": ["src"],
