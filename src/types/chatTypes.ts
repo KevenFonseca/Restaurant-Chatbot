@@ -1,4 +1,4 @@
-export interface chatResponse {
+export interface ChatResponse {
     reply: string,
     updatedSession: any
 }

@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 
 const OrderSchema = new Schema({
     sessionId: { type: mongoose.Types.ObjectId, ref: 'Session', required: true },
-    status: { type: String, enum: ['pending', 'completed', 'canceled'], default: 'pending' },
+    status: { type: String, enum: ['pending', 'confirmed', 'completed', 'canceled'], default: 'pending' },
     items: [{
         menuItemId: { type: mongoose.Types.ObjectId, ref: 'MenuItem', required: true },
         quantity: { type: Number, required: true, min: 1 }
