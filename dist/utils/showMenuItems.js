@@ -1,7 +1,9 @@
 import menuItemModel from "../models/menuItemModel.js";
 import { ChatState } from '../chat/chatState.js';
 const showMenuItems = async ({ session }) => {
-    const menuItems = await menuItemModel.find({ isAvailable: true });
+    const menuItems = await menuItemModel
+        .find({ isAvailable: true })
+        .sort({ id: 1 });
     const menuList = menuItems
         .map((item) => `${item.id}. ${item.name} - $${item.price}`)
         .join('\n');
