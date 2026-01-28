@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from "mongoose"
 const Schema = mongoose.Schema;
 const MenuItemSchema = new Schema({
     id: { type: Number, required: true, unique: true },
@@ -6,4 +6,4 @@ const MenuItemSchema = new Schema({
     price: { type: Number, required: true },
     isAvailable: { type: Boolean, default: true },
 });
-export default mongoose.model('MenuItem', MenuItemSchema);
+export default mongoose.model('MenuItem', MenuItemSchema)
