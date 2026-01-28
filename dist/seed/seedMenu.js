@@ -1,5 +1,5 @@
-import MenuItemModel from '../models/menuItemModel.js'
-import connectDB from '../dbconfig/db.js'
+import MenuItemModel from '../models/menuItemModel.js';
+import connectDB from '../dbconfig/db.js';
 const menu = [
     { id: 1, name: "burger", price: 5 },
     { id: 2, name: "pizza", price: 8 },
@@ -10,13 +10,13 @@ const menu = [
 ];
 const seed = async () => {
     try {
-        connectDB()
+        connectDB();
         await MenuItemModel.insertMany(menu);
-        console.log("Menu items seeded successfully")
+        console.log("Menu items seeded successfully");
     }
     catch (err) {
-        console.error("Seeding failed:", err)
-        process.exit(1)
+        console.error("Seeding failed:", err);
+        process.exit(1);
     }
 };
 seed();

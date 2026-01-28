@@ -1,5 +1,5 @@
-import mongoose from 'mongoose'
-const Schema = mongoose.Schema
+import mongoose from 'mongoose';
+const Schema = mongoose.Schema;
 const OrderSchema = new Schema({
     sessionId: { type: mongoose.Types.ObjectId, ref: 'Session', required: true },
     status: { type: String, enum: ['pending', 'confirmed', 'completed', 'canceled'], default: 'pending' },
@@ -11,4 +11,4 @@ const OrderSchema = new Schema({
 }, {
     timestamps: true
 });
-export default mongoose.model('Order', OrderSchema)
+export default mongoose.model('Order', OrderSchema);

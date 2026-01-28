@@ -14,6 +14,9 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use('/chat', chatRouter);
 // Basic route
 app.get('/', (req, res) => {
-    res.send('Restaurant ChatBot is running!');
+    res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
+});
+app.use((req, res) => {
+    res.status(404).send('Página não encontrada');
 });
 export default app;

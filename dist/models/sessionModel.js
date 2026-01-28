@@ -1,5 +1,5 @@
-import mongoose from "mongoose"
-const Schema = mongoose.Schema
+import mongoose from "mongoose";
+const Schema = mongoose.Schema;
 const SessionSchema = new Schema({
     deviceId: { type: String, required: true },
     currentState: { type: String, required: true },
@@ -8,4 +8,4 @@ const SessionSchema = new Schema({
 }, {
     timestamps: true
 });
-export default mongoose.model('Session', SessionSchema)
+export default mongoose.model('Session', SessionSchema);
