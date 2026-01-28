@@ -2,7 +2,7 @@
   "compilerOptions": {
     "types": ["node"],
     "target": "es2020",                           // versão js gerada
-    "module": "es2020",                           // usar import/export
+    "module": "esnext",                           // usar import/export
     "moduleResolution": "node",                   // resolução de módulos no estilo node js
     "rootDir": "./src",                           // diretório raiz dos arquivos fonte TypeScript
     "outDir": "./dist",                           // diretório de saída dos arquivos compilados
@@ -14,5 +14,5 @@
   },
 
   "include": ["src"],
-  // "exclude": ["node_modules"]
+  "exclude": ["node_modules", "dist"]
 }
