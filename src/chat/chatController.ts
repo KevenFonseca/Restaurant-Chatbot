@@ -14,7 +14,7 @@ const chatController = async (req: Request, res: Response) => {
 
         const session = await getOrCreateSession(deviceId)
 
-        console.log(session.currentState)
+        //console.log(session.currentState)
 
         if (!input && session.currentState !== ChatState.START) {
             return res.status(400).json({error: 'Message is required'})
