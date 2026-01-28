@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "tsx src/server.ts",
     "build": "tsc",
+    "start": "node dist/server.js",
     "seed:menu": "tsx src/seed/seedMenu.ts"
   },
   "keywords": [],
