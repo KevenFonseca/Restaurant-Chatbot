@@ -1,7 +1,7 @@
 import { Request, Response } from 'express'
-import getOrCreateSession from '../service/sessionService'
-import stateRouter from '../chat/stateRouter'
-import { ChatState } from './chatState'
+import getOrCreateSession from '../service/sessionService.js'
+import stateRouter from '../chat/stateRouter.js'
+import { ChatState } from './chatState.js'
 
 const chatController = async (req: Request, res: Response) => {
     try {

@@ -1,6 +1,6 @@
-import { ChatState} from '../chatState'
-import { getMenuItems } from '../../utils/getMenuItems'
-import { ChatResponse } from '../../types/chatTypes'
+import { ChatState} from '../chatState.js'
+import { getMenuItems } from '../../utils/getMenuItems.js'
+import { ChatResponse } from '../../types/chatTypes.js'
 
 const handleStart = async ({ session }: {session: any}): Promise<ChatResponse> => {
     const replyMessage = [

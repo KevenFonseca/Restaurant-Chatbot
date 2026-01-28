@@ -1,5 +1,5 @@
-import MenuItem from '../../models/menuItemModel'
-import { ChatResponse } from '../../types/chatTypes'
+import MenuItem from '../../models/menuItemModel.js'
+import { ChatResponse } from '../../types/chatTypes.js'
 
 const currentOrderHandler = async ({ session }: { session: any }): Promise<ChatResponse> => {
     if (!session.temporaryOrder) session.temporaryOrder = []

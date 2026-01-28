@@ -2,15 +2,15 @@
   "compilerOptions": {
     "types": ["node"],
     "target": "es2020",                           // versão js gerada
-    "module": "esnext",                           // usar import/export
-    "moduleResolution": "node",                   // resolução de módulos no estilo node js
+    "module": "nodenext",                           // usar import/export
+    "moduleResolution": "nodenext",                   // resolução de módulos no estilo node js
     "rootDir": "./src",                           // diretório raiz dos arquivos fonte TypeScript
     "outDir": "./dist",                           // diretório de saída dos arquivos compilados
     "strict": true,                               // habilitar todas as verificações estritas
     "esModuleInterop": true,                      // habilitar import de módulos comunsjs
     "forceConsistentCasingInFileNames": true,     // garantir consistência de maiúsculas/minúsculas nos nomes de arquivos
     "skipLibCheck": true,                         // pular verificação de tipos em arquivos de declaração
-    "typeRoots": ["./node_modules/@types", "./src/types"]
+    // "typeRoots": ["./node_modules/@types", "./src/types"]
   },
 
   "include": ["src"],

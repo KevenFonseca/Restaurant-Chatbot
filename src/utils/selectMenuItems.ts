@@ -1,4 +1,4 @@
-import { ChatState } from '../chat/chatState'
+import { ChatState } from '../chat/chatState.js'
 
 const selectMenuItem = async (input: string, menu: any[], session: any, nextState: ChatState, isFirstSelection: boolean) => {  
     if (!/^\d+$/.test(input)) {

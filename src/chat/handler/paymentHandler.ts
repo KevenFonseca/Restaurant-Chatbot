@@ -1,8 +1,8 @@
-import { ChatResponse } from '../../types/chatTypes'
-import { ChatState } from '../chatState'
-import { initializeTransaction, verifyTransaction, updateOrderPaymentStatus } from '../../service/paystackService'
-import Order from '../../models/orderModel'
-import Payment from '../../models/paymentModel'
+import { ChatResponse } from '../../types/chatTypes.js'
+import { ChatState } from '../chatState.js'
+import { initializeTransaction, verifyTransaction, updateOrderPaymentStatus } from '../../service/paystackService.js'
+import Order from '../../models/orderModel.js'
+import Payment from '../../models/paymentModel.js'
 import dotenv from 'dotenv'
 
 dotenv.config()
@@ -51,7 +51,7 @@ const verifyPaystackPaymentHandler = async ({ session, reference }: { session: a
         }
     }
 
-    const verification = await verifyTransaction(reference)
+    const verification: any = await verifyTransaction(reference)
 
     if (verification.data.status === 'success') {
         await updateOrderPaymentStatus(orderId.toString(), reference)

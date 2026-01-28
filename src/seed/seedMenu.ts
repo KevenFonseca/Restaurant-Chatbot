@@ -1,5 +1,5 @@
-import MenuItemModel from '../models/menuItemModel'
-import connectDB from '../dbconfig/db'
+import MenuItemModel from '../models/menuItemModel.js'
+import connectDB from '../dbconfig/db.js'
 
 const menu = [
     { id: 1, name: "burger", price: 5},

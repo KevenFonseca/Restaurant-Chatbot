@@ -1,4 +1,4 @@
-import menuItemModel from "../models/menuItemModel"
+import menuItemModel from "../models/menuItemModel.js"
 
 const getMenuItems = async () => {
     try {

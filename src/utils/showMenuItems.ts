@@ -1,6 +1,6 @@
-import menuItemModel from "../models/menuItemModel"
-import { ChatResponse } from "../types/chatTypes"
-import { ChatState } from '../chat/chatState'
+import menuItemModel from "../models/menuItemModel.js"
+import { ChatResponse } from "../types/chatTypes.js"
+import { ChatState } from '../chat/chatState.js'
 
 const showMenuItems = async ({ session }: {session: any}): Promise<ChatResponse> => {
     const menuItems = await menuItemModel.find({ isAvailable: true })

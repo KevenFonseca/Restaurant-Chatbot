@@ -1,6 +1,6 @@
 import express, { Request, Response } from 'express'
 import cookieParser from 'cookie-parser'
-import chatRouter from './chat/chatRouter'
+import chatRouter from './chat/chatRouter.js'
 import path from 'path'
 import { fileURLToPath } from 'url'
 

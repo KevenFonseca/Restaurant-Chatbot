@@ -1,10 +1,10 @@
-import { ChatState } from '../chatState'
-import MenuItem from '../../models/menuItemModel'
-import Order from '../../models/orderModel'
-import { getMenuItems } from '../../utils/getMenuItems'
-import selectMenuItem from '../../utils/selectMenuItems'
-import { ChatResponse } from '../../types/chatTypes'
-import handleStart from './startHandler'
+import { ChatState } from '../chatState.js'
+import MenuItem from '../../models/menuItemModel.js'
+import Order from '../../models/orderModel.js'
+import { getMenuItems } from '../../utils/getMenuItems.js'
+import selectMenuItem from '../../utils/selectMenuItems.js'
+import { ChatResponse } from '../../types/chatTypes.js'
+import handleStart from './startHandler.js'
 
 const handleOrdering = async ({ input, session }: {input: string, session: any}): Promise<ChatResponse> => {
     if (!session.temporaryOrder) session.temporaryOrder = []

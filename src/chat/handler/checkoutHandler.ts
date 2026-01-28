@@ -1,7 +1,7 @@
-import { ChatResponse } from '../../types/chatTypes'
-import Order from '../../models/orderModel'
-import { ChatState } from '../chatState'
-import handleStart from './startHandler'
+import { ChatResponse } from '../../types/chatTypes.js'
+import Order from '../../models/orderModel.js'
+import { ChatState } from '../chatState.js'
+import handleStart from './startHandler.js'
 
 const handleCheckout = async ({ session }: {session: any}): Promise<ChatResponse> => {
     const lastOrder = await Order.findOne({ sessionId: session._id })

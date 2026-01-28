@@ -1,5 +1,5 @@
-import sessionModel from '../models/sessionModel'
-import { ChatState } from '../chat/chatState'
+import sessionModel from '../models/sessionModel.js'
+import { ChatState } from '../chat/chatState.js'
 
 const getOrCreateSession = async (deviceId: string) => {
     let session = await sessionModel.findOne({ deviceId })

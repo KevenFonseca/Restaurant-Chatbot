@@ -1,6 +1,6 @@
 import Paystack from 'paystack-api'
-import Order from '../models/orderModel'
-import Payment from '../models/paymentModel'
+import Order from '../models/orderModel.js'
+import Payment from '../models/paymentModel.js'
 import dotenv from 'dotenv'
 
 dotenv.config()

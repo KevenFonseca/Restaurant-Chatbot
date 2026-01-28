@@ -1,6 +1,6 @@
-import { ChatState } from '../chatState'
-import { ChatResponse } from '../../types/chatTypes'
-import Order from '../../models/orderModel'
+import { ChatState } from '../chatState.js'
+import { ChatResponse } from '../../types/chatTypes.js'
+import Order from '../../models/orderModel.js'
 
 const cancelOrderHandler = async ({session }: {session: any}): Promise<ChatResponse> => {
     if (!session.temporaryOrder || session.temporaryOrder.length === 0) {

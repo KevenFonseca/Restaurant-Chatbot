@@ -1,12 +1,12 @@
-import { ChatState } from '../chatState'
-import { getMenuItems } from '../../utils/getMenuItems'
-import selectMenuItem from '../../utils/selectMenuItems'
-import { ChatResponse } from '../../types/chatTypes'
-import currentOrderHandler from './currentOrderHandler'
-import orderHistoryHandler from './orderHistoryHandler'
-import handleCheckout from './checkoutHandler'
-import cancelOrderHandler from './cancelOrderHandler'
-import { showMenuItems } from '../../utils/showMenuItems'
+import { ChatState } from '../chatState.js'
+import { getMenuItems } from '../../utils/getMenuItems.js'
+import selectMenuItem from '../../utils/selectMenuItems.js'
+import { ChatResponse } from '../../types/chatTypes.js'
+import currentOrderHandler from './currentOrderHandler.js'
+import orderHistoryHandler from './orderHistoryHandler.js'
+import handleCheckout from './checkoutHandler.js'
+import cancelOrderHandler from './cancelOrderHandler.js'
+import { showMenuItems } from '../../utils/showMenuItems.js'
 
 const handleSelection = async ({ input, session }: {input: string, session: any}): Promise<ChatResponse> => {
     switch (input) {

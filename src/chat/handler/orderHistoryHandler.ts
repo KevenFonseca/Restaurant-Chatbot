@@ -1,5 +1,5 @@
-import { ChatResponse } from '../../types/chatTypes'
-import Order from '../../models/orderModel'
+import { ChatResponse } from '../../types/chatTypes.js'
+import Order from '../../models/orderModel.js'
 
 const orderHistoryHandler = async ({ session }: {session: any}): Promise<ChatResponse> => {
     const orders = await Order.find({ sessionId: session._id })
